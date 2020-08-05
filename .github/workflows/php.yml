@@ -34,4 +34,12 @@ jobs:
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     # - name: Run test suite
-    #   run: composer run-script test
+    #   run: composer run-script test      
+      
+    - name: The PHP Security Checker
+      uses: symfonycorp/security-checker-action@v2
+      with:
+        # The path to composer.lock is stored (root directory by default)
+        lock: ./composer.lock # optional, default is ./composer.lock
+        # Whether to fail when issues are detected (false by default)
+        disable-exit-code: 0  # optional, default is 0
